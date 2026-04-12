@@ -23,23 +23,23 @@
             display: flex;
             flex-direction: column;
             gap: 0.25rem;
-        }
 
-        .links > div {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: center;
-        }
+            div {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
 
-        .links a {
-            text-decoration: none;
-            text-transform: uppercase;
-            color: inherit;
-        }
+                a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: inherit;
 
-        .links a:not(:last-child)::after {
-            content: "•";
-            margin: 0 0.5rem;
+                    &:not(:last-child)::after {
+                        content: "•";
+                        margin: 0 0.5rem;
+                    }
+                }
+            }
         }
     }
 
