@@ -1,0 +1,16 @@
+.boton {
+    padding: .8rem 2rem;
+    border-radius: .6rem;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &.main {
+        background: hsla(300, 90%, 85%, 100%);
+        border: none;
+    }
+
+    &.ghost {
+        background: none;
+        border: 1px solid hsla(300, 90%, 85%, 100%);
+    }
+}
