@@ -1,0 +1,27 @@
+.numeros {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 1rem;
+
+    .bodas, .years, .ciudades {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        min-width: 8%;
+
+        .numero {
+            font-size: 2rem;
+            line-height: normal;
+        }
+    }
+
+    .sep {
+        height: 1.5rem;
+        width: .2rem;
+        border-radius: .2rem;
+        background-color: hsla(300, 13%, 9%, 30%);
+    }
+}
