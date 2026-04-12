@@ -1,7 +1,7 @@
 :root {
     --text: hsl(300, 13%, 9%);
     --text-h: #08060d;
-    --bg: #fff;
+    --bg: hsl(300, 100%, 98%, 100%);
     --border: #e5e4e7;
     --code-bg: #f4f3ec;
     --accent: #aa3bff;

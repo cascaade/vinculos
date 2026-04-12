@@ -1,3 +1,39 @@
 .hero {
     background-color: hsla(300, 90%, 85%, 15%);
+    text-align: center;
+    padding: 6rem 0 7rem;
+
+    .heroFloat {
+        width: fit-content;
+        margin: auto;
+    }
+
+    .logo {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: normal;
+    }
+
+    .title {
+        text-transform: capitalize;
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        line-height: normal;
+    }
+
+    .subtitle {
+        text-transform: capitalize;
+        font-size: 1.5rem;
+        font-weight: normal;
+        margin-top: 0;
+        margin-bottom: 3rem;
+    }
+
+    .button {
+        margin: .5rem;
+        width: calc(40% - 1rem);
+        display: inline-block;
+    }
 }
