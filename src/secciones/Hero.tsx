@@ -9,7 +9,7 @@ export default function Hero() {
                 <h1 className={styles.title}>tu boda, <br/>perfectamente imaginada</h1>
                 <h3 className={styles.subtitle}>bodas de lujo</h3>
                 <Boton fill="main" className={styles.button}>Continuar</Boton>
-                <Boton fill="ghost" className={styles.button}>Contáctanos</Boton>
+                <Boton fill="ghost" className={styles.button} href="#contacto">Contáctanos</Boton>
             </div>
         </div>
     );
