@@ -1,5 +1,6 @@
 :root {
-    --text: hsl(300, 13%, 9%);
+    --text: hsla(300, 13%, 15%, 100%);
+    --faded-text: hsla(300, 13%, 15%, 70%);
     --text-h: #08060d;
     --bg: hsl(300, 100%, 98%, 100%);
     --border: #e5e4e7;
@@ -30,4 +31,11 @@
 
 body {
     margin: 0;
+}
+
+.logo {
+    color: hsl(300, 30%, 45%);
+    font-family: 'Monsieur La Doulaise', var(--serif);
+    text-transform: capitalize;
+    user-select: none;
 }

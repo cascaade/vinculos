@@ -1,21 +1,22 @@
 .footer {
+    color: var(--faded-text);
+
     .main {
         height: min-content;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: stretch;
-        padding: 1rem 1.5rem;
+        padding: 1rem 2rem;
 
         .logo {
-            text-transform: uppercase;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             flex-shrink: 0;
             padding-left: 1rem;
-            font-size: 1.2rem;
+            font-size: 2rem;
         }
 
         .links {
@@ -33,7 +34,7 @@
         .links a {
             text-decoration: none;
             text-transform: uppercase;
-            color: var(--text);
+            color: inherit;
         }
 
         .links a:not(:last-child)::after {
@@ -47,5 +48,6 @@
         border-top: 1px solid hsla(300, 13%, 9%, 20%);
         padding: 1rem 1.5rem;
         box-sizing: border-box;
+        color: inherit;
     }
 }
