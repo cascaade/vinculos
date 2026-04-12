@@ -4,8 +4,8 @@
     justify-content: center;
     padding: 2rem;
     gap: 1rem;
-    background-color: hsla(300, 90%, 85%, 15%);
-    border-bottom: 1px solid hsla(300, 30%, 60%, 15%);
+    background-color: rgb(255, 235, 255);
+    border-bottom: 1px solid rgb(240, 210, 240);
 
     .bodas, .years, .ciudades {
         display: flex;
@@ -13,6 +13,7 @@
         flex-direction: column;
         text-align: center;
         min-width: 8%;
+        text-transform: uppercase;
 
         .numero {
             font-size: 2rem;

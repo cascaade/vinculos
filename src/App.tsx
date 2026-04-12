@@ -17,16 +17,22 @@ function App() {
         <>
             <Hero/>
             <Numeros/>
-            <NavegacionDeServicios/>
-            <Invitaciones/>
-            <Ropa/>
-            <Negocio/>
-            <Comida/>
-            <Decoraciones/>
-            <Entretenimiento/>
-            <NavegacionDeContacto/>
-            <Contacto/>
-            <Sonar/>
+            <main>
+                <section>
+                    <NavegacionDeServicios/>
+                    <Invitaciones/>
+                    <Ropa/>
+                    <Negocio/>
+                    <Comida/>
+                    <Decoraciones/>
+                    <Entretenimiento/>
+                </section>
+                <section>
+                    <NavegacionDeContacto/>
+                    <Contacto/>
+                    <Sonar/>
+                </section>
+            </main>
             <Pie/>
         </>
     )
