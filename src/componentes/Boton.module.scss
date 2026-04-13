@@ -8,6 +8,7 @@ $SHADOW-COLOR: rgb(223, 159, 223);
     cursor: pointer;
     color: var(--text);
     text-decoration: none;
+    margin-top: 2px;
 
     box-shadow: 0 2px 0 $SHADOW-COLOR, inset 0 0 $SHADOW-COLOR;
     transform: translateY(-2px);
