@@ -3,8 +3,10 @@ import GaleriaDeImagenes from "../plano/GaleriaDeImagenes.tsx";
 
 export default function Decoraciones() {
     return (<article className={styles.decoraciones}>
-        <h3 className={styles.title}>Decoraciones</h3>
-        <header className={styles.header}>Muchos tipos de globos y bandarines</header>
+        <header className={`${styles.header} standard-header`}>
+            <h3 className="header-title">Decoraciones</h3>
+            <h4 className="header-body">Muchos tipos de globos y bandarines</h4>
+        </header>
         <GaleriaDeImagenes></GaleriaDeImagenes>
     </article>);
 }

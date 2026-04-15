@@ -5,6 +5,7 @@
 
     --serif: 'Playfair Display', serif;
     --numbers: 'Libre Bodoni', 'Playfair Display', sans-serif;
+    --fancy: 'Monsieur La Doulaise', var(--serif), serif;
 
     font: 18px / 145% var(--serif);
     letter-spacing: 0.18px;
@@ -27,11 +28,33 @@ body {
 
 .logo {
     color: rgb(149, 80, 149);
-    font-family: 'Monsieur La Doulaise', var(--serif), serif;
+    font-family: var(--fancy);
     text-transform: capitalize;
     user-select: none;
     -webkit-user-select: none;
     line-height: normal;
+}
+
+.standard-header {
+    width: 35rem;
+    margin: auto;
+
+    .header-title {
+        font-size: 1rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 3rem;
+        font-weight: 400;
+    }
+
+    .header-body {
+        font-size: 3rem;
+        font-weight: 600;
+        text-transform: capitalize;
+        text-align: center;
+        line-height: normal;
+        margin: 0;
+    }
 }
 
 * {
