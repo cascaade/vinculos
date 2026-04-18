@@ -1,0 +1,30 @@
+.galeria {
+    width: 100%;
+
+    .track {
+        width: 100%;
+        overflow: hidden;
+
+        &:first-child .row {
+            padding: 1rem 0 1rem 1rem;
+        }
+
+        &:last-child .row {
+            padding: 0 0 1rem 1rem;
+        }
+
+        .row {
+            width: max-content;
+            display: flex;
+            gap: 1rem;
+
+            img {
+                width: 25dvw;
+                height: auto;
+                aspect-ratio: 16/9;
+                border-radius: .8rem;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 0 12px rgba(0, 0, 0, 0.06);
+            }
+        }
+    }
+}
