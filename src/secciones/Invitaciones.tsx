@@ -1,6 +1,7 @@
 import styles from './Invitaciones.module.scss';
 import Cita from "../plano/Cita.tsx";
 import Tiovivo from "../plano/Tiovivo.tsx";
+import Interaccion from "../componentes/Interaccion.tsx";
 
 export default function Invitaciones() {
     return (<article className={styles.invitaciones}>
@@ -12,6 +13,7 @@ export default function Invitaciones() {
             <Tiovivo></Tiovivo>
             <div style={{height: "6rem"}}></div>
         </div>
+        <Interaccion lockTab={"invitaciones"}/>
         <Cita></Cita>
     </article>);
 }

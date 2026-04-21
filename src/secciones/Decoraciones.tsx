@@ -1,5 +1,6 @@
 import styles from './Decoraciones.module.scss';
 import GaleriaDeImagenes from "../plano/GaleriaDeImagenes.tsx";
+import Interaccion from "../componentes/Interaccion.tsx";
 
 export default function Decoraciones() {
     return (<article className={styles.decoraciones}>
@@ -8,5 +9,6 @@ export default function Decoraciones() {
             <h4 className="header-body">Muchos tipos de globos y bandarines</h4>
         </header>
         <GaleriaDeImagenes></GaleriaDeImagenes>
+        <Interaccion lockTab={"decoraciones"}/>
     </article>);
 }

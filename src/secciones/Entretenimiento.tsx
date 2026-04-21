@@ -1,5 +1,6 @@
 import styles from './Entretenimiento.module.scss';
 import GaleriaDeImagenes from "../plano/GaleriaDeImagenes.tsx";
+import Interaccion from "../componentes/Interaccion.tsx";
 
 export default function Entretenimiento() {
     return (<article className={styles.entretenimiento}>
@@ -9,5 +10,6 @@ export default function Entretenimiento() {
         </header>
         <video src=""></video>
         <GaleriaDeImagenes></GaleriaDeImagenes>
+        <Interaccion lockTab={"entretenimiento"}/>
     </article>);
 }
