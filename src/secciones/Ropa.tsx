@@ -8,7 +8,7 @@ export default function Ropa() {
             <h3 className="header-title">Ropa</h3>
             <h4 className="header-body">encontre tu vestido ideal</h4>
         </header>
-        <Interaccion lockTab={"ropa"}/>
         <GaleriaDeImagenes/>
+        <Interaccion lockTab={"ropa"}/>
     </article>);
 }
