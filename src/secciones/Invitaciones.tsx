@@ -4,7 +4,7 @@ import Tiovivo from "../plano/Tiovivo.tsx";
 import Interaccion from "../componentes/Interaccion.tsx";
 
 export default function Invitaciones() {
-    return (<article className={styles.invitaciones}>
+    return (<article className={styles.invitaciones} id="_invitaciones">
         <div>
             <header className={`${styles.header} standard-header`}>
                 <h3 className="header-title">Invitaciones</h3>

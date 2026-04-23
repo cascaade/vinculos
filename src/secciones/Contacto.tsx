@@ -6,7 +6,7 @@ export default function Contacto() {
     const formRef = useRef<HTMLFormElement | null>(null);
 
     return (<article className={styles.contacto}>
-        <header className={styles.header}>Contáctanos</header>
+        <header className={styles.header} id="_contacto">Contáctanos</header>
         <form action="" method="POST" className={styles.form} ref={formRef} onSubmit={(e) => { e.preventDefault(); alert("guau!") }}>
             <input type="text" name="" id="" placeholder="nombre" />
             <input type="email" name="" id="" placeholder="correo electronico" required />

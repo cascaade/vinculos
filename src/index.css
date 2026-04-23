@@ -38,6 +38,7 @@ body {
 .standard-header {
     width: 35rem;
     margin: auto;
+    overflow: hidden;
 
     .header-title {
         font-size: 1rem;
