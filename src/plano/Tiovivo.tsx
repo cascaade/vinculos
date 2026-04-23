@@ -57,13 +57,8 @@ export default function Tiovivo() {
             pinSpacing: false,
             scrub: true,
             onUpdate: (self) => {
-                const targetA = A_START + self.progress * (A_END - A_START);
-                gsap.to(proxy, {
-                    a: targetA,
-                    duration: 0.15,
-                    overwrite: true,
-                    onUpdate: () => applyA(proxy.a),
-                });
+                proxy.a = A_START + self.progress * (A_END - A_START);
+                applyA(proxy.a);
             },
         });
 
