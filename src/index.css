@@ -58,6 +58,12 @@ body {
     }
 }
 
+p {
+    max-width: 36rem;
+    width: 90%;
+    margin: 1rem auto;
+}
+
 * {
     corner-shape: superellipse(1.6);
 }
