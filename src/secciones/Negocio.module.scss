@@ -1,0 +1,28 @@
+.negocio {
+    overflow: hidden;
+
+    .header {
+        display: flex;
+        width: 56rem;
+        margin: 2rem auto 1rem;
+        gap: 2rem;
+
+        img {
+            aspect-ratio: 16/9;
+            width: 50%;
+            flex: 1 1;
+            border-radius: 1rem;
+        }
+
+        h3 {
+            width: 50%;
+            flex: 1 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--fancy);
+            font-size: 3em;
+            color: var(--faded-theme);
+        }
+    }
+}

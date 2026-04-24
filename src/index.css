@@ -1,6 +1,7 @@
 :root {
     --text: hsla(300, 13%, 15%, 90%);
     --faded-text: hsla(300, 13%, 15%, 70%);
+    --faded-theme: rgb(186, 127, 186);
     --bg: rgb(255, 245, 255);
 
     --serif: 'Playfair Display', serif;
@@ -27,7 +28,7 @@ body {
 }
 
 .logo {
-    color: rgb(149, 80, 149);
+    color: var(--faded-theme);
     font-family: var(--fancy);
     text-transform: capitalize;
     user-select: none;
