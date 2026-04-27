@@ -1,0 +1,23 @@
+.sonar {
+    background: linear-gradient(rgb(255, 240, 255), rgb(255, 245, 255));
+    overflow: hidden;
+
+    .header {
+        margin: 3rem auto 1.6rem;
+        width: max-content;
+        overflow: visible;
+
+        img {
+            border-radius: 1rem;
+            margin-bottom: 2.8rem;
+            aspect-ratio: 16/9;
+            height: auto;
+            width: 100%;
+            object-position: 0 90%;
+        }
+    }
+
+    p:last-of-type {
+        margin-bottom: 3.4rem;
+    }
+}

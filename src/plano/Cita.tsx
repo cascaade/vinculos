@@ -2,8 +2,8 @@ import styles from './Cita.module.scss';
 import type {ReactNode} from "react";
 
 export type CitaProps = {
-    children?: ReactNode;
-    name?: string;
+    children: ReactNode;
+    name: string;
 }
 
 export default function Cita({ children, name }: CitaProps) {

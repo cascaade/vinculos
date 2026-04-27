@@ -1,8 +1,13 @@
 import styles from './NavegacionDeServicios.module.scss';
+import * as React from "react";
 
-export default function NavegacionDeServicios() {
-    return (<nav className={styles.nav}>
-        <span className={`logo ${styles.logo}`}>Vínculos</span>
+interface NavegacionDeServiciosProps {
+    ref?: React.RefObject<HTMLElement | null>
+}
+
+export default function NavegacionDeServicios({ ref }: NavegacionDeServiciosProps) {
+    return (<nav className={styles.nav} ref={ref}>
+        <a className={`logo ${styles.logo}`} href={"#home"}>Vínculos</a>
         <div className={styles.servicios}>
             <a href="#invitaciones">invitaciones</a>
             <a href="#ropa">ropa</a>

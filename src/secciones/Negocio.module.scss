@@ -1,17 +1,23 @@
 .negocio {
     overflow: hidden;
+    background: linear-gradient(rgb(255, 240, 255), rgb(255, 245, 255));
+    margin-top: 2rem;
 
     .header {
         display: flex;
         width: 56rem;
-        margin: 2rem auto 1rem;
+        margin: 5rem auto 3rem;
         gap: 2rem;
+        padding: 1rem;
+        border-radius: 1.6rem;
+        background-color: rgb(255, 245, 255);
+        border: 1px solid rgb(245, 230, 245);
 
         img {
             aspect-ratio: 16/9;
             width: 50%;
             flex: 1 1;
-            border-radius: 1rem;
+            border-radius: .8rem;
         }
 
         h3 {
@@ -24,5 +30,9 @@
             font-size: 3em;
             color: var(--faded-theme);
         }
+    }
+
+    p:last-of-type {
+        margin-bottom: 5rem;
     }
 }

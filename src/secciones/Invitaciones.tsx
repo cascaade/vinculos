@@ -14,6 +14,6 @@ export default function Invitaciones() {
             <div style={{height: "6rem"}}></div>
         </div>
         <Interaccion lockTab={"invitaciones"}/>
-        <Cita></Cita>
+        <Cita name={"Miguel Rodriguez - Novio"}>Me gusta que</Cita>
     </article>);
 }

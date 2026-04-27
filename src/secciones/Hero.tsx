@@ -3,7 +3,7 @@ import Boton from "../componentes/Boton.tsx";
 
 export default function Hero() {
     return (
-        <header className={styles.hero}>
+        <header className={styles.hero} id="_home">
             <div className={styles.heroFloat}>
                 <span className={`logo ${styles.logo}`}>Vínculos</span>
                 <h1 className={styles.title}>tu boda, <br/>perfectamente imaginada</h1>

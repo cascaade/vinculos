@@ -1,11 +1,15 @@
-import { useEffect, useRef } from 'react';
+import {useEffect, useRef} from 'react';
 import styles from './GaleriaDeImagenes.module.scss';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function GaleriaDeImagenes() {
+interface GaleriaDeImagenesProps {
+    list: string[]
+}
+
+export default function GaleriaDeImagenes({list}: GaleriaDeImagenesProps) {
     const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -38,7 +42,7 @@ export default function GaleriaDeImagenes() {
                 if (x <= -width) x += width;
                 if (x >= 0) x -= width;
 
-                gsap.set(row, { x });
+                gsap.set(row, {x});
 
                 velocity *= 0.9;
             });
@@ -54,27 +58,31 @@ export default function GaleriaDeImagenes() {
         <div ref={containerRef} className={styles.galeria}>
             <div className={styles.track}>
                 <div className={styles.row}>
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
+                    {
+                        list.slice(0, 4).map(src =>
+                            <img src={src} alt=""/>
+                        )
+                    }
+                    {
+                        list.slice(0, 4).map(src =>
+                            <img src={src} alt=""/>
+                        )
+                    }
                 </div>
             </div>
 
             <div className={styles.track}>
                 <div className={styles.row}>
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
+                    {
+                        list.slice(4, 8).map(src =>
+                            <img src={src} alt=""/>
+                        )
+                    }
+                    {
+                        list.slice(4, 8).map(src =>
+                            <img src={src} alt=""/>
+                        )
+                    }
                 </div>
             </div>
         </div>
