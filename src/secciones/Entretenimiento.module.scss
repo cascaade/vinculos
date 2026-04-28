@@ -1,4 +1,18 @@
 .entretenimiento {
     overflow: hidden;
     background: linear-gradient(rgb(255, 240, 255), rgb(255, 245, 255));
+
+    .videoContainer {
+        margin: auto;
+
+        .video {
+            text-align: center;
+            margin-top: 3rem;
+            height: auto;
+            aspect-ratio: 2/1;
+            border: none;
+            border-radius: .8rem;
+            width: 100%;
+        }
+    }
 }

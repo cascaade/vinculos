@@ -9,7 +9,9 @@ export default function Entretenimiento() {
             <h3 className="header-title">Entretenimiento</h3>
             <h4 className="header-body">Divertido para todos</h4>
         </header>
-        <iframe src={ImageSourceUtil.video}></iframe>
+        <div className={`${styles.videoContainer} standard-content`}>
+            <iframe className={styles.video} src={ImageSourceUtil.video} lang={"es"}></iframe>
+        </div>
         <GaleriaDeImagenes list={ImageSourceUtil.entretenimiento} />
         <Interaccion lockTab={"entretenimiento"}/>
     </article>);

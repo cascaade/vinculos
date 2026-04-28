@@ -20,7 +20,7 @@ export default {
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F2.bp.blogspot.com%2F-G_aa684Pyp8%2FUIY5IFfk3WI%2FAAAAAAAARdQ%2F1jvi4nSQCLo%2Fs1600%2Fwedding_reception_table_decor_ideas.jpg&f=1&nofb=1&ipt=8caa17c6cbe6387d7e960bede53071212fce062d2a29c05f6a3fd4568a3d80f1",
         "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F1.bp.blogspot.com%2F-OH3nFTMTxbE%2FUQRfkj5otNI%2FAAAAAAAACWc%2FYYg6RSz46K0%2Fs1600%2Ftall%2Bfloral%2Bcenterpiece%2B(2).JPG&f=1&nofb=1&ipt=6627585f0285ebc41a5975a14119b35cb9c1fee0a48c101d763d7dc99526b499"
     ],
-    video: "https://www.youtube.com/embed/-ARVwU58l7A",
+    video: "https://www.youtube.com/embed/-ARVwU58l7A?autoplay=1&mute=1&loop=1",
     entretenimiento: [
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmodernweddings.com%2Fwp-content%2Fuploads%2F2020%2F07%2FAdobeStock_245127730-scaled.jpeg&f=1&nofb=1&ipt=cc9f23cd30d54b0ee04abacd56c24581e3b38789aedb9b6102aecaac6c2a4a34",
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D1017094883752221&f=1&nofb=1&ipt=c5ce5504b4229e79eb5be3a01f7bde19ec71c27e991f54486337465dcdd7fbd3",
