@@ -10,6 +10,16 @@ export default {
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fgroup-people-wedding-singing-song-happy-taking-cake-table-lot-food-56325491.jpg&f=1&nofb=1&ipt=29bb0b0faea29474f2ae4275c05792ab3e36defcb985ab2a0dc2bc74c5301d28"
     ],
     negocio: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmauiweddingsfromtheheart.com%2Fwp-content%2Fuploads%2F2022%2F11%2Fpackages-06-copy.jpg&f=1&nofb=1&ipt=f5c809a4a639ce2a0118dd27ac692c59f689808bc2e9aecc24997ea10edb02b1",
+    logos: [
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvectorseek.com%2Fwp-content%2Fuploads%2F2023%2F11%2FSubway-NEW-Logo-Vector.svg-.png&f=1&nofb=1&ipt=3d48c5d6d0a55c35fcf6d17587b00a728ba83701a402991fe7bb1c9b27b49f6f',
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F1000logos.net%2Fwp-content%2Fuploads%2F2021%2F12%2FPanera-Bread-logo.png&f=1&nofb=1&ipt=e16819c40a816551ce856a734e12953073a24489080b2bbee2d4806cda0364a3',
+        '/logos/unnamed_store_removebg.png',
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fd2a3qa7amybvvs.cloudfront.net%2Fstyles%2Fnode_view_160x%2Fs3%2Fs3fs-public%2F2023-10%2Ffield_logo%2F5-parkvillemarket-logo.png%3Fitok%3DgmY-mMoF&f=1&nofb=1&ipt=09f700ac9116cb713ac7d6e47fd342cdfbf21af4a51203eb6673adeedbd81ff9',
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogos-world.net%2Fwp-content%2Fuploads%2F2020%2F04%2FMcDonalds-Logo-2006-present.png&f=1&nofb=1&ipt=aed8b903ecce425402d08322b42cec68ead7884bc9da3d7d24d136a1d33bc431',
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F91%2FJersey_Mike%27s_logo.svg%2F1200px-Jersey_Mike%27s_logo.svg.png&f=1&nofb=1&ipt=5991a1ec4e5badaab47332ef701d0c1272f853c79efaaa3c70a54f759a00c255',
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngmart.com%2Ffiles%2F22%2FTaco-Bell-Logo-PNG.png&f=1&nofb=1&ipt=d99c2a24836b73e101e9d389b08fc8d5456ddb12829a2f2a732aa17f86041891',
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0605%2F9058%2F8154%2Ffiles%2FBH_Logo_Large_2ba7f0de-5366-42fd-a5ff-9283e408c636_150x%402x.png%3Fv%3D1634484568&f=1&nofb=1&ipt=470e731d5ea27164e8e6acadfa8d1215ddfa8a386240002f13114c03f9dbf85e',
+    ],
     decoraciones: [
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhips.hearstapps.com%2Fhmg-prod%2Fimages%2Fwedding-decor-rafanelli-events-3-6402522ca9595.jpg%3Fcrop%3D1xw%3A1xh%3Bcenter%2Ctop%26resize%3D980%3A*&f=1&nofb=1&ipt=db0b43160ad7ae31113e76e143519ef6d4a2de28419f18c71b5f7745fcb52481",
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia2.insideweddings.com%2Fimages%2F1ec7d2076e529f7e36a431431223ea46.original.jpg&f=1&nofb=1&ipt=8bf9434bce631ca0012fbd8121d399ba5468824bcfe5c4bd88458ab11757d893",

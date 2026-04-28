@@ -8,8 +8,7 @@ export default function Comida() {
             <h3 className="header-title">Comida</h3>
             <h4 className="header-body">Tu comida favorita en tu boda</h4>
         </header>
-        <Logos />
-        <p>nuestros patrocinadores & socios</p>
+        <Logos header={"nuestros patrocinadores & socios"} />
 
         <p>try</p>
         <Interaccion lockTab={"comida"}/>

@@ -54,18 +54,16 @@ export default function GaleriaDeImagenes({list}: GaleriaDeImagenesProps) {
         });
     }, []);
 
+    const set1 = list.slice(0, 4);
+    const set2 = list.slice(4, 8);
+
     return (
         <div ref={containerRef} className={styles.galeria}>
             <div className={styles.track}>
                 <div className={styles.row}>
                     {
-                        list.slice(0, 4).map(src =>
-                            <img src={src} alt=""/>
-                        )
-                    }
-                    {
-                        list.slice(0, 4).map(src =>
-                            <img src={src} alt=""/>
+                        [...set1, ...set1].map((src, i) =>
+                            <img src={src} alt="" key={i}/>
                         )
                     }
                 </div>
@@ -74,13 +72,8 @@ export default function GaleriaDeImagenes({list}: GaleriaDeImagenesProps) {
             <div className={styles.track}>
                 <div className={styles.row}>
                     {
-                        list.slice(4, 8).map(src =>
-                            <img src={src} alt=""/>
-                        )
-                    }
-                    {
-                        list.slice(4, 8).map(src =>
-                            <img src={src} alt=""/>
+                        [...set2, ...set2].map((src, i) =>
+                            <img src={src} alt="" key={i}/>
                         )
                     }
                 </div>
