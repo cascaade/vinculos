@@ -45,9 +45,10 @@
             flex-grow: 1;
 
             .mainContent {
-                width: 50%;
-                flex: 1 1;
+                height: 100px;
+                flex-grow: 1;
                 box-sizing: border-box;
+                overflow: hidden;
             }
 
             &:has(.bottomBar) {
@@ -68,6 +69,49 @@
 
             .note {
                 color: var(--faded-text);
+            }
+        }
+    }
+
+    .invitaciones {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & + .bottomBar {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            gap: .8rem;
+            font-size: 1.2em;
+        }
+
+        .invitacion {
+            padding: 2rem;
+            border-radius: 1.2em;
+            text-align: center;
+            color: #333;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 3/4;
+            height: 100%;
+            max-height: 90%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            p {
+                margin: 1rem;
+            }
+
+            h3 {
+                font-size: .9em;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+                font-family: var(--fancy);
             }
         }
     }

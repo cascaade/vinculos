@@ -1,6 +1,6 @@
 import styles from './Sonar.module.scss';
 import Interaccion from "../componentes/Interaccion.tsx";
-import ImageSourceUtil from "../util/ImageSourceUtil.ts";
+import ImageSourceUtil from "../util/ImageSourceLookup.ts";
 
 export default function Sonar() {
     return (<article className={styles.sonar}>

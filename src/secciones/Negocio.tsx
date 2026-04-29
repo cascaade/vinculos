@@ -1,6 +1,6 @@
 import styles from './Negocio.module.scss';
 import Cita from "../plano/Cita.tsx";
-import ImageSourceUtil from "../util/ImageSourceUtil.ts";
+import ImageSourceUtil from "../util/ImageSourceLookup.ts";
 
 export default function Negocio() {
     return (<article className={styles.negocio} id="_negocio">

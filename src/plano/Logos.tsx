@@ -1,5 +1,5 @@
 import styles from './Logos.module.scss';
-import ImageSourceUtil from "../util/ImageSourceUtil.ts";
+import ImageSourceUtil from "../util/ImageSourceLookup.ts";
 
 interface LogosProps {
     header?: string

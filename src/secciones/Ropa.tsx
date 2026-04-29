@@ -1,7 +1,7 @@
 import styles from './Ropa.module.scss';
 import GaleriaDeImagenes from "../plano/GaleriaDeImagenes.tsx";
 import Interaccion from "../componentes/Interaccion.tsx";
-import ImageSourceUtil from "../util/ImageSourceUtil.ts";
+import ImageSourceUtil from "../util/ImageSourceLookup.ts";
 
 export default function Ropa() {
     return (<article className={styles.ropa}>

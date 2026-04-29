@@ -1,5 +1,6 @@
 import styles from './Interaccion.module.scss';
 import {useState} from "react";
+import {useStore} from "../util/DataStore.ts";
 
 export type InteraccionProps = {
     lockTab?: "invitaciones" | "ropa" | "comida" | "decoraciones" | "entretenimiento",
@@ -7,16 +8,57 @@ export type InteraccionProps = {
 
 export default function Interaccion({ lockTab }: InteraccionProps) {
     const [currentTab, setCurrentTab] = useState(lockTab ?? "invitaciones");
+    const { invData, setInvData } = useStore();
 
     const renderContent = () => {
         switch (currentTab) {
             case "invitaciones":
                 return (<>
-                    <div className={styles.mainContent}>
-                        invitation display
+                    <div className={styles.mainContent + " " + styles.invitaciones}>
+                        <div
+                            className={styles.invitacion}
+                            style={{ background: invData.color }}
+                        >
+                            <h3 contentEditable
+                                suppressContentEditableWarning
+                                onBlur={(e) => setInvData({ titulo: e.currentTarget.innerText })}
+                            >
+                                {invData.titulo}
+                            </h3>
+
+                            <h1 contentEditable
+                                suppressContentEditableWarning
+                                onBlur={(e) => setInvData({ nombres: e.currentTarget.innerText })}
+                            >
+                                {invData.nombres}
+                            </h1>
+
+                            <p contentEditable
+                                suppressContentEditableWarning
+                                onBlur={(e) => setInvData({ fecha: e.currentTarget.innerText })}
+                            >
+                                {invData.fecha}
+                            </p>
+
+                            <p contentEditable
+                                suppressContentEditableWarning
+                                onBlur={(e) => setInvData({ lugar: e.currentTarget.innerText })}
+                            >
+                                {invData.lugar}
+                            </p>
+                        </div>
                     </div>
+
                     <div className={styles.bottomBar}>
-                        <div className={styles.note}>customize your very own invitation</div>
+                        <div className={styles.note}>
+                            Personaliza tu invitación ✨
+                        </div>
+
+                        <input
+                            type="color"
+                            value={invData.color}
+                            onChange={(e) => setInvData({ color: e.target.value })}
+                        />
                     </div>
                 </>);
             case "ropa":

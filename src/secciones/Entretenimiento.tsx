@@ -1,7 +1,7 @@
 import styles from './Entretenimiento.module.scss';
 import GaleriaDeImagenes from "../plano/GaleriaDeImagenes.tsx";
 import Interaccion from "../componentes/Interaccion.tsx";
-import ImageSourceUtil from "../util/ImageSourceUtil.ts";
+import ImageSourceUtil from "../util/ImageSourceLookup.ts";
 
 export default function Entretenimiento() {
     return (<article className={styles.entretenimiento} id="_entretenimiento">
