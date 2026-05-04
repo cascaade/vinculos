@@ -13,6 +13,6 @@ export default function Negocio() {
         <p>Creemos que el verdadero lujo está en la personalización. Cada detalle se hace para reflejar tu visión, para que tu boda sea completamente tuya.</p>
         <p>Durante todo el proceso, damos prioridad a una comunicación clara y constante, para que te sientas apoyado, informado y seguro en cada paso.</p>
         <p>Nuestro trabajo es simple: hacer realidad tu visión con precisión, elegancia y facilidad.</p>
-        <Cita name={"Owen - CEO"}>No hay dos parejas iguales, así que no debería haber dos bodas iguales. Hacemos cada detalle para ti—nada es estándar y no olvidamos nada.</Cita>
+        <Cita name={"Owen - CEO"}>No hay dos parejas iguales, así que no debería haber dos bodas iguales. Hacemos cada detalle para ti, y no olvidamos nada.</Cita>
     </article>);
 }

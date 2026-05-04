@@ -13,6 +13,7 @@ export default function Entretenimiento() {
             <iframe className={styles.video} src={ImageSourceUtil.video} lang={"es"}></iframe>
         </div>
         <GaleriaDeImagenes list={ImageSourceUtil.entretenimiento} />
+        <p>Yo niego que alguien este abburido</p>
         <Interaccion lockTab={"entretenimiento"}/>
     </article>);
 }
