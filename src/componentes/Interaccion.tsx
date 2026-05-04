@@ -269,6 +269,7 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                                                 key={`${item.id}-${i}`}
                                                 aria-label={`Quitar ${item.nombre}`}
                                                 onClick={() => removeRoleItem(role, i)}
+                                                title={item.nombre}
                                             >
                                                 <img src={item.imagen}></img>
                                             </button>

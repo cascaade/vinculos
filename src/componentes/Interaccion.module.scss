@@ -365,6 +365,9 @@
                 height: 100%;
                 width: 100%;
                 box-shadow: none;
+                object-fit: cover;
+                overflow: clip;
+                filter: none;
             }
 
             &:active {
@@ -503,9 +506,11 @@
     }
 
     .sharedCardHeader {
-        min-height: 96px;
+        height: 96px;
         display: grid;
         place-items: center;
+        overflow: clip;
+        position: relative;
         background:
                 linear-gradient(135deg, rgba(255, 233, 199, 0.9), rgba(221, 247, 217, 0.8)),
                 repeating-linear-gradient(45deg, transparent 0 12px, rgba(255, 255, 255, 0.35) 12px 24px);

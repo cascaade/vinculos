@@ -9,6 +9,12 @@ export default {
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.essence.com%2Fwp-content%2Fuploads%2F2023%2F06%2Ffav-141-scaled.jpg&f=1&nofb=1&ipt=24ac6d6c99d679dbc403b122fd606f0afc626ce5789fa7d5c7aa6541e8c0b9b6",
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fgroup-people-wedding-singing-song-happy-taking-cake-table-lot-food-56325491.jpg&f=1&nofb=1&ipt=29bb0b0faea29474f2ae4275c05792ab3e36defcb985ab2a0dc2bc74c5301d28"
     ],
+    ropaItems: [
+        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdimg.dillards.com%2Fis%2Fimage%2FDillardsZoom%2Fzoom%2Fdress-the-population-tiffany-one-shoulder-midi-sheath-dress%2F00000000_zi_2a00971f-62eb-46b1-82f0-3c136e3b7052.jpg&f=1&nofb=1&ipt=89d55d6bd93e3829cf9e3e60fb63ac7f65233c84bee08415895c6b47c20ce790",
+        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhips.hearstapps.com%2Fvader-prod.s3.amazonaws.com%2F1691810892-black-herringbone-design-highbridge-suit.jpg%3Fcrop%3D1.00xw%3A0.680xh%3B0%2C0.118xh%26resize%3D980%3A*&f=1&nofb=1&ipt=8cda01503d3a4ee94fb094c5760409d12f1d72973b6cac36901076d8fbf5e3aa",
+        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fa6%2F5b%2F8f%2Fa65b8f4e4ac274b56d1904a87059bc7b.jpg&f=1&nofb=1&ipt=76b146a47ebb34aa82fd0844051e3f776d0e7164c7a93ad117f6235f5dfcca1d",
+        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdna.lystit.com%2Fphotos%2Fnordstrom%2Fef8172f0%2Fdavid-donahue-White-Trim-Fit-Solid-French-Cuff-Tuxedo-Shirt.jpeg&f=1&nofb=1&ipt=29d0f71b5d540342c00ecb900ba6c4a210aca4347fe046d6e472039f0200a0b3"
+    ],
     negocio: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmauiweddingsfromtheheart.com%2Fwp-content%2Fuploads%2F2022%2F11%2Fpackages-06-copy.jpg&f=1&nofb=1&ipt=f5c809a4a639ce2a0118dd27ac692c59f689808bc2e9aecc24997ea10edb02b1",
     logos: [
         'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvectorseek.com%2Fwp-content%2Fuploads%2F2023%2F11%2FSubway-NEW-Logo-Vector.svg-.png&f=1&nofb=1&ipt=3d48c5d6d0a55c35fcf6d17587b00a728ba83701a402991fe7bb1c9b27b49f6f',

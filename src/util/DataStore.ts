@@ -10,11 +10,15 @@ export type RopaItem = {
 };
 
 export const ropaItems: RopaItem[] = [
-    { id: 1, nombre: "Vestido Rosa", tipo: "vestido", color: "rosa", imagen: ImageSourceUtil.ropa[0] },
-    { id: 2, nombre: "Traje Negro", tipo: "traje", color: "negro", imagen: ImageSourceUtil.ropa[1] },
-    { id: 3, nombre: "Vestido Blanco", tipo: "vestido", color: "blanco", imagen: ImageSourceUtil.ropa[2] },
-    { id: 4, nombre: "Camisa Formal", tipo: "camisa", color: "blanco", imagen: ImageSourceUtil.ropa[3] },
+    { id: 1, nombre: "Vestido Rosa", tipo: "vestido", color: "rosa", imagen: "" },
+    { id: 2, nombre: "Traje Negro", tipo: "traje", color: "negro", imagen: "" },
+    { id: 3, nombre: "Vestido Blanco", tipo: "vestido", color: "blanco", imagen: "" },
+    { id: 4, nombre: "Camisa Formal", tipo: "camisa", color: "blanco", imagen: "" },
 ];
+
+for (const item of ropaItems) {
+    item.imagen = ImageSourceUtil.ropaItems[item.id - 1];
+}
 
 export type ComidaItem = {
     id: number;
