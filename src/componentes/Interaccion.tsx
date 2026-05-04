@@ -1,5 +1,5 @@
 import styles from './Interaccion.module.scss';
-import { useState } from "react";
+import { type ReactNode, useState } from "react";
 import {
     comidaItems,
     entretenimientoItems,
@@ -18,10 +18,60 @@ export type InteraccionProps = {
 type Role = "novio" | "novia" | "invitados";
 type ComidaTipo = "todos" | "entrada" | "plato fuerte" | "postre" | "bebida";
 
-export default function
-    Interaccion({ lockTab }: InteraccionProps) {
+type SharedCardProps = {
+    header: ReactNode;
+    children: ReactNode;
+    footer?: ReactNode;
+    className?: string;
+    draggable?: boolean;
+    selected?: boolean;
+    onClick?: () => void;
+    onDragStart?: (e: React.DragEvent<HTMLDivElement>) => void;
+    onDragEnd?: () => void;
+};
+
+function SharedCard({
+    header,
+    children,
+    footer,
+    className = "",
+    draggable,
+    selected,
+    onClick,
+    onDragStart,
+    onDragEnd
+}: SharedCardProps) {
+    return (
+        <div
+            className={
+                styles.sharedCard + " " +
+                (selected ? styles.sharedCardSelected : "") + " " +
+                className
+            }
+            draggable={draggable}
+            onClick={onClick}
+            onDragStart={onDragStart}
+            onDragEnd={onDragEnd}
+            role={onClick ? "button" : undefined}
+            tabIndex={onClick ? 0 : undefined}
+            onKeyDown={(e) => {
+                if (onClick && (e.key === "Enter" || e.key === " ")) {
+                    e.preventDefault();
+                    onClick();
+                }
+            }}
+        >
+            <div className={styles.sharedCardHeader}>{header}</div>
+            <div className={styles.sharedCardBody}>{children}</div>
+            {footer && <div className={styles.sharedCardFooter}>{footer}</div>}
+        </div>
+    );
+}
+
+export default function Interaccion({ lockTab }: InteraccionProps) {
     const [currentTab, setCurrentTab] = useState(lockTab ?? "invitaciones");
     const [comidaFiltro, setComidaFiltro] = useState<ComidaTipo>("todos");
+    const [draggingRopaId, setDraggingRopaId] = useState<number | null>(null);
 
     const {
         invData, setInvData,
@@ -42,6 +92,14 @@ export default function
             ...roles,
             [role]: [...roles[role], item]
         });
+        setDraggingRopaId(null);
+    };
+
+    const removeRoleItem = (role: Role, index: number) => {
+        setRoles({
+            ...roles,
+            [role]: roles[role].filter((_, itemIndex) => itemIndex !== index)
+        });
     };
 
     const renderContent = () => {
@@ -61,53 +119,61 @@ export default function
         ];
         const entretenimientoEnergia = entretenimiento.length === 0
             ? 0
-            : Math.round(entretenimiento.reduce((total, item) => total + item.energia, 0) / entretenimiento.length);
+            : entretenimiento.reduce((total, item) => total + item.energia, 0) / entretenimiento.length;
 
         switch (currentTab) {
             case "invitaciones":
                 return (
                     <>
                         <div className={styles.mainContent}>
-                            <div
-                                className={styles.invitacion}
-                                style={{ background: invData.color }}
-                            >
-                                <h3 contentEditable suppressContentEditableWarning
-                                    onBlur={(e) => setInvData({ titulo: e.currentTarget.innerText })}
-                                >
-                                    {invData.titulo}
-                                </h3>
+                            <div className={styles.sectionIntro}>
+                                <span>design your invitation</span>
+                                <h3>try out this interactive blah blah</h3>
 
-                                <h1 contentEditable suppressContentEditableWarning
-                                    onBlur={(e) => setInvData({ nombres: e.currentTarget.innerText })}
-                                >
-                                    {invData.nombres}
-                                </h1>
-
-                                <p contentEditable suppressContentEditableWarning
-                                   onBlur={(e) => setInvData({ fecha: e.currentTarget.innerText })}
-                                >
-                                    {invData.fecha}
-                                </p>
-
-                                <p contentEditable suppressContentEditableWarning
-                                   onBlur={(e) => setInvData({ lugar: e.currentTarget.innerText })}
-                                >
-                                    {invData.lugar}
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className={styles.bottomBar}>
-                            <div className={styles.note}>
-                                ✨ Personaliza tu invitación
+                                <div className={styles.inputContainer}>
+                                    <input
+                                        type="color"
+                                        value={invData.bgcolor}
+                                        onChange={(e) => setInvData({ bgcolor: e.target.value })}
+                                    />
+                                    <input
+                                        type="color"
+                                        value={invData.color}
+                                        onChange={(e) => setInvData({ color: e.target.value })}
+                                    />
+                                </div>
                             </div>
 
-                            <input
-                                type="color"
-                                value={invData.color}
-                                onChange={(e) => setInvData({ color: e.target.value })}
-                            />
+                            <div className={styles.invitationStage}>
+                                <div
+                                    className={styles.invitacion}
+                                    style={{ background: invData.bgcolor, color: invData.color }}
+                                >
+                                    <h3 contentEditable suppressContentEditableWarning
+                                        onBlur={(e) => setInvData({ titulo: e.currentTarget.innerText })}
+                                    >
+                                        {invData.titulo}
+                                    </h3>
+
+                                    <h1 contentEditable suppressContentEditableWarning
+                                        onBlur={(e) => setInvData({ nombres: e.currentTarget.innerText })}
+                                    >
+                                        {invData.nombres}
+                                    </h1>
+
+                                    <p contentEditable suppressContentEditableWarning
+                                       onBlur={(e) => setInvData({ fecha: e.currentTarget.innerText })}
+                                    >
+                                        {invData.fecha}
+                                    </p>
+
+                                    <p contentEditable suppressContentEditableWarning
+                                       onBlur={(e) => setInvData({ lugar: e.currentTarget.innerText })}
+                                    >
+                                        {invData.lugar}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </>
                 );
@@ -158,19 +224,21 @@ export default function
 
                             <div className={styles.storeGrid}>
                                 {filtered.map(item => (
-                                    <div
+                                    <SharedCard
                                         key={item.id}
-                                        className={styles.card}
+                                        className={styles.ropaCard}
                                         draggable
-                                        onDragStart={(e) =>
-                                            e.dataTransfer.setData("item", JSON.stringify(item))
-                                        }
+                                        onDragStart={(e) => {
+                                            setDraggingRopaId(item.id);
+                                            e.dataTransfer.setData("item", JSON.stringify(item));
+                                        }}
+                                        onDragEnd={() => setDraggingRopaId(null)}
+                                        header={<img className={styles.cardEmoji} src={item.imagen} />}
                                     >
-                                        <img className={styles.cardImage} src={item.imagen} alt={item.nombre} />
-                                        <div className={styles.cardInfo}>
-                                            {item.nombre}
-                                        </div>
-                                    </div>
+                                        <span className={styles.cardType}>{item.tipo}</span>
+                                        <strong>{item.nombre}</strong>
+                                        <small>{item.color}</small>
+                                    </SharedCard>
                                 ))}
                             </div>
                         </div>
@@ -180,16 +248,30 @@ export default function
                                 <div
                                     key={role}
                                     className={styles.roleBox}
-                                    onDragOver={(e) => e.preventDefault()}
-                                    onDrop={(e) => handleDrop(e, role)}
                                 >
                                     <div className={styles.sideHeader}>
                                         {role.toUpperCase()}
                                     </div>
 
-                                    <div className={styles.roleItems}>
+                                    <div
+                                        className={
+                                            styles.roleItems + " " +
+                                            (draggingRopaId !== null ? styles.dropReady : "")
+                                        }
+                                        onDragOver={(e) => e.preventDefault()}
+                                        onDrop={(e) => handleDrop(e, role)}
+                                    >
+                                        {roles[role].length === 0 && (
+                                            <span className={styles.dropHint}>Suelta un look aquí</span>
+                                        )}
                                         {roles[role].map((item, i) => (
-                                            <img key={i} src={item.imagen} alt={item.nombre} />
+                                            <button
+                                                key={`${item.id}-${i}`}
+                                                aria-label={`Quitar ${item.nombre}`}
+                                                onClick={() => removeRoleItem(role, i)}
+                                            >
+                                                <img src={item.imagen}></img>
+                                            </button>
                                         ))}
                                     </div>
                                 </div>
@@ -201,8 +283,8 @@ export default function
                 return (<>
                     <div className={styles.mainContent}>
                         <div className={styles.sectionIntro}>
-                            <span>interactive tasting</span>
-                            <h3>create a menu that your guests will remember</h3>
+                            <span>Degustación interactiva</span>
+                            <h3>Crea un menú que tus invitados van a recordar</h3>
                         </div>
 
                         <div className={styles.filterGroup}>
@@ -222,18 +304,21 @@ export default function
 
                         <div className={styles.storeGrid}>
                             {filteredComida.map(item => (
-                                <div key={item.id} className={styles.card}>
-                                    <div className={styles.foodHero}>{item.icono}</div>
-                                    <div className={styles.cardInfo}>
+                                <SharedCard
+                                    key={item.id}
+                                    className={styles.foodCard}
+                                    header={<span className={styles.cardEmoji}>{item.icono}</span>}
+                                    footer={
+                                        <>
+                                            <span>${item.precio} pp</span>
+                                            <button onClick={() => addComida(item)}>Agregar</button>
+                                        </>
+                                    }
+                                >
                                         <span className={styles.cardType}>{item.tipo}</span>
                                         <strong>{item.nombre}</strong>
                                         <p>{item.descripcion}</p>
-                                        <div className={styles.cardFooter}>
-                                            <span>${item.precio} pp</span>
-                                            <button onClick={() => addComida(item)}>Agregar</button>
-                                        </div>
-                                    </div>
-                                </div>
+                                </SharedCard>
                             ))}
                         </div>
                     </div>
@@ -272,8 +357,8 @@ export default function
                 return (<>
                     <div className={styles.mainContent}>
                         <div className={styles.sectionIntro}>
-                            <span>environment workshop</span>
-                            <h3>design your own magical environment</h3>
+                            <span>Atelier de ambiente</span>
+                            <h3>Diseña tu propio entorno mágico</h3>
                         </div>
 
                         <div className={
@@ -361,14 +446,13 @@ export default function
                 return (<>
                     <div className={styles.mainContent}>
                         <div className={styles.sectionIntro}>
-                            <span>party on</span>
-                            <h3>build a party with energetic moments</h3>
+                            <span>Ritmo de la noche</span>
+                            <h3>Construye una fiesta con momentos de energía</h3>
                         </div>
 
                         <div className={styles.timeline}>
-                            {["Ceremonia", "Coctel", "Cena", "Fiesta"].map((momento, index) => (
+                            {["Ceremonia", "Cóctel", "Cena", "Fiesta"].map(momento => (
                                 <div key={momento} className={styles.timelineStep}>
-                                    <span>{index + 1}</span>
                                     <strong>{momento}</strong>
                                 </div>
                             ))}
@@ -379,37 +463,39 @@ export default function
                                 const selected = entretenimiento.some(selectedItem => selectedItem.id === item.id);
 
                                 return (
-                                    <button
+                                    <SharedCard
                                         key={item.id}
                                         className={
-                                            styles.entertainmentCard + " " +
-                                            (selected ? styles.entertainmentActive : "")
+                                            styles.entertainmentCard
                                         }
+                                        selected={selected}
                                         onClick={() => toggleEntretenimiento(item)}
+                                        header={<span className={styles.cardEmoji}>{item.icono}</span>}
+                                        footer={
+                                            <span className={styles.energyDots} aria-label={`Energía ${item.energia} de 5`}>
+                                                {Array.from({ length: 5 }).map((_, index) => (
+                                                    <i key={index} className={index < item.energia ? styles.dotActive : ""}></i>
+                                                ))}
+                                            </span>
+                                        }
                                     >
-                                        <span className={styles.entertainmentIcon}>{item.icono}</span>
                                         <span className={styles.cardType}>{item.tipo}</span>
                                         <strong>{item.nombre}</strong>
                                         <small>{item.descripcion}</small>
-                                        <span className={styles.energyDots} aria-label={`Energía ${item.energia} de 5`}>
-                                            {Array.from({ length: 5 }).map((_, index) => (
-                                                <i key={index} className={index < item.energia ? styles.dotActive : ""}></i>
-                                            ))}
-                                        </span>
-                                    </button>
+                                    </SharedCard>
                                 );
                             })}
                         </div>
                     </div>
                     <div className={styles.sideBar}>
                         <div className={styles.sideHeader}>Plan de entretenimiento</div>
-                        <p className={styles.sideNote}>Selecciona actos para ver el pulso de tu celebracion.</p>
+                        <p className={styles.sideNote}>Selecciona actos para ver el pulso de tu celebración.</p>
 
                         <div className={styles.energyMeter}>
                             <div style={{ height: `${entretenimientoEnergia * 20}%` }}></div>
                         </div>
                         <strong className={styles.energyLabel}>
-                            {entretenimientoEnergia === 0 ? "Sin ritmo aún" : `Energía ${entretenimientoEnergia}/5`}
+                            {entretenimientoEnergia === 0 ? "Sin ritmo aún" : `Energía ${Math.round(entretenimientoEnergia)}/5`}
                         </strong>
 
                         <div className={styles.selectedList}>

@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import ImageSourceUtil from "./ImageSourceLookup";
 
 export type RopaItem = {
     id: number;
@@ -9,10 +10,10 @@ export type RopaItem = {
 };
 
 export const ropaItems: RopaItem[] = [
-    { id: 1, nombre: "Vestido Rosa", tipo: "vestido", color: "rosa", imagen: "/ropa/vestido1.jpg" },
-    { id: 2, nombre: "Traje Negro", tipo: "traje", color: "negro", imagen: "/ropa/traje1.jpg" },
-    { id: 3, nombre: "Vestido Blanco", tipo: "vestido", color: "blanco", imagen: "/ropa/vestido2.jpg" },
-    { id: 4, nombre: "Camisa Formal", tipo: "camisa", color: "blanco", imagen: "/ropa/camisa1.jpg" },
+    { id: 1, nombre: "Vestido Rosa", tipo: "vestido", color: "rosa", imagen: ImageSourceUtil.ropa[0] },
+    { id: 2, nombre: "Traje Negro", tipo: "traje", color: "negro", imagen: ImageSourceUtil.ropa[1] },
+    { id: 3, nombre: "Vestido Blanco", tipo: "vestido", color: "blanco", imagen: ImageSourceUtil.ropa[2] },
+    { id: 4, nombre: "Camisa Formal", tipo: "camisa", color: "blanco", imagen: ImageSourceUtil.ropa[3] },
 ];
 
 export type ComidaItem = {
@@ -163,6 +164,7 @@ export const entretenimientoItems: EntretenimientoItem[] = [
 ];
 
 type invDataFormat = {
+    bgcolor: string;
     titulo: string;
     nombres: string;
     fecha: string;
@@ -214,7 +216,8 @@ export const useStore = create<format>((set) => ({
         nombres: "Ana & Luis",
         fecha: "12 de Junio, 2027",
         lugar: "Barcelona",
-        color: "#f8c8dc"
+        color: "#685360",
+        bgcolor: "#f8c8dc"
     },
 
     setInvData: (data) =>

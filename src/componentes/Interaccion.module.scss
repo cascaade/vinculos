@@ -183,9 +183,72 @@
     .invitaciones {
         .mainContent {
             display: flex;
+            gap: 1rem;
+            background: linear-gradient(135deg, #fffaf2, #f7fff7);
+            height: 100%;
+            align-items: center;
+        }
+
+        .sectionIntro {
+            height: fit-content;
+            flex-grow: 0;
+            max-width: 40%;
+            width: max-content;
+
+            .small {
+                color: var(--faded-text) !important;
+                font-size: 1rem !important;
+                font-weight: 400 !important;
+                text-transform: none !important;
+                letter-spacing: normal !important;
+            }
+
+            .inputContainer {
+                border: 1.5px dashed #ddd;
+                padding: 1rem;
+                margin-top: 2rem;
+                height: 50px;
+                border-radius: 1rem;
+                display: flex;
+                gap: .8rem;
+                justify-content: center;
+
+                input[type="color"] {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 50px;
+                    height: 50px;
+                    background: none;
+                    border: none;
+                    padding: 0;
+                    cursor: pointer;
+                    border-radius: 50%;
+                }
+
+                input[type="color"]::-webkit-color-swatch-wrapper {
+                    padding: 0;
+                }
+
+                input[type="color"]::-webkit-color-swatch {
+                    border-radius: 50%;
+                    border: 3px solid #fff;
+                    box-shadow: 0 0 0 2px #ddd;
+                }
+
+                input[type="color"]::-moz-color-swatch {
+                    border-radius: 50%;
+                    border: 3px solid #fff;
+                    box-shadow: 0 0 0 2px #ddd;
+                }
+            }
+        }
+
+        .invitationStage {
+            display: flex;
+            flex: 1;
             align-items: center;
             justify-content: center;
-            height: 100%;
+            min-height: 0;
         }
 
         .bottomBar {
@@ -195,34 +258,6 @@
             gap: 3rem;
             font-size: 1.2em;
             padding: 1.6rem;
-
-            input[type="color"] {
-                -webkit-appearance: none;
-                appearance: none;
-                width: 50px;
-                height: 50px;
-                background: none;
-                border: none;
-                padding: 0;
-                cursor: pointer;
-                border-radius: 50%;
-            }
-
-            input[type="color"]::-webkit-color-swatch-wrapper {
-                padding: 0;
-            }
-
-            input[type="color"]::-webkit-color-swatch {
-                border-radius: 50%;
-                border: 3px solid #fff;
-                box-shadow: 0 0 0 2px #ddd;
-            }
-
-            input[type="color"]::-moz-color-swatch {
-                border-radius: 50%;
-                border: 3px solid #fff;
-                box-shadow: 0 0 0 2px #ddd;
-            }
         }
 
         .invitacion {
@@ -277,9 +312,6 @@
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px dashed #ddd;
-            margin-bottom: 1rem;
 
             .filterGroup {
                 align-items: center;
@@ -324,33 +356,20 @@
             gap: 1rem;
         }
 
-        .card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
+        .ropaCard {
             cursor: grab;
-            transition: all 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            aspect-ratio: 3 / 4;
-            border: 1px solid #f0f0f0;
-        }
+            min-height: 220px;
 
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-        }
+            img {
+                border-radius: 7px 7px 0 0; // WHY DO I HAVE TO DO IT MANUALLY AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+                height: 100%;
+                width: 100%;
+                box-shadow: none;
+            }
 
-        .cardImage {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-        }
-
-        .cardInfo {
-            padding: 0.6rem;
-            font-size: 0.9rem;
-            text-align: left;
+            &:active {
+                cursor: grabbing;
+            }
         }
 
         .sideBar {
@@ -362,30 +381,67 @@
         }
 
         .roleBox {
-            background: white;
-            border-radius: 16px;
-            padding: 0.6rem;
-            border: 1px solid #f0f0f0;
+            display: grid;
+            gap: 0.35rem;
         }
 
         .sideHeader {
             font-weight: 600;
-            margin-bottom: 0.4rem;
+            margin: 0 !important;
             font-size: 0.85rem;
+            color: #6d5170;
         }
 
         .roleItems {
             display: flex;
             gap: 0.5rem;
+            align-items: center;
+            min-height: 3rem;
             overflow-x: auto;
-            padding-bottom: 0.3rem;
+            padding: .6rem;
+            border: 2px dashed #d9c6dc;
+            border-radius: calc(1.2rem + 2px);
+            background: rgba(255, 255, 255, 0.76);
+            transition: background-color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
 
-            img {
-                width: 52px;
-                height: 52px;
-                border-radius: 10px;
-                object-fit: cover;
+            &.dropReady {
+                border-color: #a356a3;
+                background: #f3def3;
+                box-shadow: inset 0 0 0 1px rgba(163, 86, 163, 0.2);
             }
+
+            button {
+                display: grid;
+                place-items: center;
+                width: 3rem;
+                height: 3rem;
+                flex: 0 0 auto;
+                border: 1px solid #eadcea;
+                border-radius: .6rem;
+                background: #fff;
+                cursor: pointer;
+                font-size: 1.45rem;
+                transition: transform 0.16s ease, opacity 0.16s ease;
+                padding: 0;
+                overflow: hidden;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            button:hover {
+                transform: scale(0.95);
+                opacity: 0.72;
+            }
+        }
+
+        .dropHint {
+            color: var(--faded-text);
+            font-size: 0.78rem;
+            text-align: center;
+            width: 100%;
         }
 
         .clearRow {
@@ -425,6 +481,89 @@
         text-transform: uppercase;
     }
 
+    .sharedCard {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        min-height: 260px;
+        border: 1px solid #f0e4d2;
+        border-radius: 8px;
+        background: white;
+        color: inherit;
+        text-align: left;
+        box-shadow: 0 8px 20px rgba(112, 76, 32, 0.08);
+        transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+
+        &:hover,
+        &.sharedCardSelected {
+            transform: translateY(-3px);
+            border-color: #285943;
+            box-shadow: 0 10px 22px rgba(40, 89, 67, 0.12);
+        }
+    }
+
+    .sharedCardHeader {
+        min-height: 96px;
+        display: grid;
+        place-items: center;
+        background:
+                linear-gradient(135deg, rgba(255, 233, 199, 0.9), rgba(221, 247, 217, 0.8)),
+                repeating-linear-gradient(45deg, transparent 0 12px, rgba(255, 255, 255, 0.35) 12px 24px);
+    }
+
+    .sharedCardBody {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 0.45rem;
+        padding: 0.8rem;
+
+        strong {
+            line-height: 1.15;
+        }
+
+        p,
+        small {
+            width: 100%;
+            margin: 0;
+            color: var(--faded-text);
+            font-size: 0.78rem;
+            line-height: 1.35;
+        }
+    }
+
+    .sharedCardFooter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        padding: 0 0.8rem 0.8rem;
+        margin-top: auto;
+
+        span {
+            font-weight: 700;
+            color: #285943;
+            font-size: 0.85em;
+        }
+
+        button {
+            border: 0;
+            border-radius: 999px;
+            background: #285943;
+            color: white;
+            cursor: pointer;
+            padding: 0.15rem 0.7rem;
+            font: inherit;
+            font-size: 0.7em;
+        }
+    }
+
+    .cardEmoji {
+        font-size: 2.75rem;
+        line-height: 1;
+        filter: drop-shadow(0 8px 12px rgba(112, 76, 32, 0.14));
+    }
+
     .comida {
         .mainContent {
             display: flex;
@@ -446,72 +585,6 @@
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
                 gap: 1rem;
-
-                .card {
-                    background: white;
-                    border: 1px solid #f0e4d2;
-                    border-radius: 8px;
-                    overflow: hidden;
-                    display: flex;
-                    flex-direction: column;
-                    min-height: 260px;
-                    box-shadow: 0 8px 20px rgba(112, 76, 32, 0.08);
-
-                    .foodHero {
-                        min-height: 96px;
-                        display: grid;
-                        place-items: center;
-                        font-size: 2.6rem;
-                        background:
-                                linear-gradient(135deg, rgba(255, 233, 199, 0.9), rgba(221, 247, 217, 0.8)),
-                                repeating-linear-gradient(45deg, transparent 0 12px, rgba(255, 255, 255, 0.35) 12px 24px);
-                    }
-
-                    .cardInfo {
-                        display: flex;
-                        flex: 1;
-                        flex-direction: column;
-                        gap: 0.45rem;
-                        padding: 0.8rem;
-
-                        strong {
-                            line-height: 1.15;
-                        }
-
-                        p {
-                            width: 100%;
-                            margin: 0;
-                            color: var(--faded-text);
-                            font-size: 0.78rem;
-                            line-height: 1.35;
-                        }
-                    }
-
-                    .cardFooter {
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        gap: 0.5rem;
-                        margin-top: auto;
-
-                        span {
-                            font-weight: 700;
-                            color: #285943;
-                            font-size: 0.85em;
-                        }
-
-                        button {
-                            border: 0;
-                            border-radius: 999px;
-                            background: #285943;
-                            color: white;
-                            cursor: pointer;
-                            padding: 0.15rem 0.7rem;
-                            font: inherit;
-                            font-size: 0.7em;
-                        }
-                    }
-                }
             }
         }
 
@@ -815,29 +888,15 @@
         .timeline {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 0.5rem;
+            gap: 1rem;
         }
 
         .timelineStep {
-            display: grid;
-            gap: 0.25rem;
-            place-items: center;
-            min-height: 70px;
+            padding: .4rem;
             border: 1px solid #dce8f1;
             border-radius: 8px;
             background: white;
             text-align: center;
-
-            span {
-                display: grid;
-                place-items: center;
-                width: 26px;
-                height: 26px;
-                border-radius: 50%;
-                background: #285943;
-                color: white;
-                font-size: 0.8rem;
-            }
 
             strong {
                 font-size: 0.82rem;
@@ -851,38 +910,9 @@
         }
 
         .entertainmentCard {
-            display: grid;
-            gap: 0.35rem;
             min-height: 210px;
-            padding: 0.9rem;
-            border: 1px solid #dce8f1;
-            border-radius: 8px;
-            background: white;
-            color: inherit;
+            //border: 1px solid #dce8f1;
             cursor: pointer;
-            text-align: left;
-            font: inherit;
-            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-
-            strong {
-                line-height: 1.15;
-            }
-
-            small {
-                color: var(--faded-text);
-                line-height: 1.35;
-            }
-        }
-
-        .entertainmentCard:hover,
-        .entertainmentActive {
-            transform: translateY(-3px);
-            border-color: #285943;
-            box-shadow: 0 10px 20px rgba(40, 89, 67, 0.12);
-        }
-
-        .entertainmentIcon {
-            font-size: 2rem;
         }
 
         .energyDots {
