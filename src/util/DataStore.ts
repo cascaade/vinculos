@@ -10,10 +10,10 @@ export type RopaItem = {
 };
 
 export const ropaItems: RopaItem[] = [
-    { id: 1, nombre: "Vestido Rosa", tipo: "vestido", color: "rosa", imagen: "" },
-    { id: 2, nombre: "Traje Negro", tipo: "traje", color: "negro", imagen: "" },
-    { id: 3, nombre: "Vestido Blanco", tipo: "vestido", color: "blanco", imagen: "" },
-    { id: 4, nombre: "Camisa Formal", tipo: "camisa", color: "blanco", imagen: "" },
+    { id: 1, nombre: "Vestido rosa", tipo: "vestido", color: "rosa", imagen: "" },
+    { id: 2, nombre: "Traje negro", tipo: "traje", color: "negro", imagen: "" },
+    { id: 3, nombre: "Vestido blanco", tipo: "vestido", color: "blanco", imagen: "" },
+    { id: 4, nombre: "Camisa formal", tipo: "camisa", color: "blanco", imagen: "" },
 ];
 
 for (const item of ropaItems) {
@@ -42,7 +42,7 @@ export const comidaItems: ComidaItem[] = [
         id: 2,
         nombre: "Croquetas de la Casa",
         tipo: "entrada",
-        descripcion: "Bocados dorados con jamon serrano, setas y aioli suave.",
+        descripcion: "Bocados dorados con jamón serrano, setas y alioli suave.",
         precio: 14,
         icono: "🍽️"
     },
@@ -56,7 +56,7 @@ export const comidaItems: ComidaItem[] = [
     },
     {
         id: 4,
-        nombre: "Filete Jardin Secreto",
+        nombre: "Filete Jardín Secreto",
         tipo: "plato fuerte",
         descripcion: "Corte tierno con puré trufado y hierbas frescas.",
         precio: 42,
@@ -74,7 +74,7 @@ export const comidaItems: ComidaItem[] = [
         id: 6,
         nombre: "Mesa de Pastelitos",
         tipo: "postre",
-        descripcion: "Macarons, tartaletas, brownies y mini cheesecakes.",
+        descripcion: "Macarrones franceses, tartaletas, brownies y mini tartas de queso.",
         precio: 16,
         icono: "🧁"
     },
@@ -82,7 +82,7 @@ export const comidaItems: ComidaItem[] = [
         id: 7,
         nombre: "Cóctel Brindis Dorado",
         tipo: "bebida",
-        descripcion: "Champagne, durazno, romero y brillo comestible.",
+        descripcion: "Champán, durazno, romero y brillo comestible.",
         precio: 11,
         icono: "🥂"
     },
@@ -90,7 +90,7 @@ export const comidaItems: ComidaItem[] = [
         id: 8,
         nombre: "Barra de Limonadas",
         tipo: "bebida",
-        descripcion: "Limonada de fresa, pepino-menta y maracuya.",
+        descripcion: "Limonada de fresa, pepino-menta y maracuyá.",
         precio: 9,
         icono: "🍹"
     },
@@ -110,7 +110,7 @@ export type DecoracionData = {
 export type EntretenimientoItem = {
     id: number;
     nombre: string;
-    tipo: "musica" | "show" | "experiencia";
+    tipo: "música" | "espectáculo" | "experiencia";
     energia: number;
     descripcion: string;
     icono: string;
@@ -120,7 +120,7 @@ export const entretenimientoItems: EntretenimientoItem[] = [
     {
         id: 1,
         nombre: "Trío Acústico",
-        tipo: "musica",
+        tipo: "música",
         energia: 2,
         descripcion: "Ceremonia emotiva y cóctel elegante con guitarra, violín y voz.",
         icono: "🎻"
@@ -128,9 +128,9 @@ export const entretenimientoItems: EntretenimientoItem[] = [
     {
         id: 2,
         nombre: "DJ Hora Dorada",
-        tipo: "musica",
+        tipo: "música",
         energia: 5,
-        descripcion: "Set personalizado para llenar la pista desde el primer baile.",
+        descripcion: "Repertorio personalizado para llenar la pista desde el primer baile.",
         icono: "🎧"
     },
     {
@@ -143,10 +143,10 @@ export const entretenimientoItems: EntretenimientoItem[] = [
     },
     {
         id: 4,
-        nombre: "Show de Fuego Frio",
-        tipo: "show",
+        nombre: "Espectáculo de Fuego Frío",
+        tipo: "espectáculo",
         energia: 5,
-        descripcion: "Entrada o primer baile con chispas seguras y efecto wow.",
+        descripcion: "Entrada o primer baile con chispas seguras y efecto sorpresa.",
         icono: "✨"
     },
     {
@@ -160,7 +160,7 @@ export const entretenimientoItems: EntretenimientoItem[] = [
     {
         id: 6,
         nombre: "Hora Latina",
-        tipo: "show",
+        tipo: "espectáculo",
         energia: 5,
         descripcion: "Bailarines que activan salsa, bachata y merengue con tus invitados.",
         icono: "💃"

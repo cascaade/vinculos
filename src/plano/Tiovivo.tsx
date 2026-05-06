@@ -87,14 +87,14 @@ export default function Tiovivo() {
                                 cardsRef.current[i] = el;
                             }}
                         >
-                            <img src={`/invitation-${i}.png`} alt={`Invitation ${i + 1}`}/>
+                            <img src={`/invitation-${i}.png`} alt={`Invitación ${i + 1}`}/>
                         </div>
                     ))}
                     <div
                         className={`${styles.card} ${styles.stale}`}
                         ref={staleCardRef}
                     >
-                        <img src={`/invitation-0.png`} alt={`Invitation 1`}/>
+                        <img src={`/invitation-0.png`} alt={`Invitación 1`}/>
                     </div>
                 </div>
             </div>

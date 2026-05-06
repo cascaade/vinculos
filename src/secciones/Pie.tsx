@@ -21,7 +21,7 @@ export default function Pie() {
             </div>
         </section>
         <section className={styles.copyright}>
-            &copy; 2026 Owen. All Rights Reserved
+            &copy; 2026 Owen. Todos los derechos reservados.
         </section>
     </footer>);
 }

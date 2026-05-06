@@ -11,7 +11,7 @@ export default function NavegacionDeContacto({ ref }: NavegacionDeContactoProps)
         <a className={`logo ${styles.logo}`} href={"#home"}>Vínculos</a>
         <div className={styles.container}>
             <a href="tel:+1-999-999-9999">(999) 999-9999</a>
-            <Boton fill={"ghost"} className={styles.button} href={"#contacto"}>contacta ahora</Boton>
+            <Boton fill={"ghost"} className={styles.button} href={"#contacto"}>contáctanos ahora</Boton>
         </div>
     </nav>);
 }

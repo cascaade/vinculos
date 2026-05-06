@@ -9,16 +9,16 @@ export default function Entretenimiento() {
             <h3 className="header-title">Entretenimiento</h3>
             <h4 className="header-body">Divertido para todos</h4>
         </header>
-        <p>Vea a este video!</p>
+        <p>¡Mira este video!</p>
         <div className={`${styles.videoContainer} standard-content`}>
             <iframe className={styles.video} src={ImageSourceUtil.video} lang={"es"}></iframe>
         </div>
-        <p>Ofrecemos un gran variedad de activiades para que tu boda sea divertida y especial. Es probable que todos los invitados encuentren algo que les guste.</p>
-        <p>No pensamos que alguien se aburra en tu boda con nuestras actividades. Es dudoso que nuestras bodas sean aburridas. Dudamos que otra empresa ofrezca tantas actividades para entretener a los invitados.</p>
+        <p>Ofrecemos una gran variedad de actividades para que tu boda sea divertida y especial. Es probable que todos los invitados encuentren algo que les guste.</p>
+        <p>No pensamos que alguien se aburra en tu boda con nuestras actividades. Dudamos que otra empresa ofrezca tantas opciones para entretener a los invitados.</p>
         <GaleriaDeImagenes list={ImageSourceUtil.entretenimiento} />
-        <p>Nos alegra que los invitados disfruten de cada momento y recuerden tu boda como una experiencia unica.</p>
-        <p>Ojala que tu boda tenga actividades que hagan felices a todos los invitados.</p>
-        <p>Recomendamos que elijas actividades que mantengan a todos entretenidos durante toda la celebracion. Aconsejamos que consideres opciones interactivas para mejorar la experiencia.</p>
+        <p>Nos alegra que los invitados disfruten de cada momento y recuerden tu boda como una experiencia única.</p>
+        <p>Ojalá que tu boda tenga actividades que hagan felices a todos los invitados.</p>
+        <p>Recomendamos que elijas actividades que mantengan a todos entretenidos durante toda la celebración. Aconsejamos que consideres opciones interactivas para mejorar la experiencia.</p>
         <Interaccion lockTab={"entretenimiento"}/>
     </article>);
 }

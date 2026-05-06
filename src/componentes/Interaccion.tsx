@@ -18,6 +18,24 @@ export type InteraccionProps = {
 type Role = "novio" | "novia" | "invitados";
 type ComidaTipo = "todos" | "entrada" | "plato fuerte" | "postre" | "bebida";
 
+const decoracionEstiloLabels: Record<DecoracionEstilo, string> = {
+    romantico: "romántico",
+    jardin: "jardín",
+    moderno: "moderno"
+};
+
+const decoracionColorLabels: Record<DecoracionColor, string> = {
+    rosa: "rosa",
+    verde: "verde",
+    dorado: "dorado"
+};
+
+const decoracionLuzLabels: Record<DecoracionLuz, string> = {
+    velas: "velas",
+    guirnaldas: "guirnaldas",
+    candelabros: "candelabros"
+};
+
 type SharedCardProps = {
     header: ReactNode;
     children: ReactNode;
@@ -112,9 +130,9 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
         );
         const comidaTotal = comidaCart.reduce((total, item) => total + item.precio * item.cantidad, 0);
         const decoracionNames = [
-            `Estilo ${decoracion.estilo}`,
-            `Color ${decoracion.color}`,
-            `Luz de ${decoracion.luz}`,
+            `Estilo ${decoracionEstiloLabels[decoracion.estilo]}`,
+            `Color ${decoracionColorLabels[decoracion.color]}`,
+            `Luz de ${decoracionLuzLabels[decoracion.luz]}`,
             ...decoracion.extras
         ];
         const entretenimientoEnergia = entretenimiento.length === 0
@@ -127,8 +145,8 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                     <>
                         <div className={styles.mainContent}>
                             <div className={styles.sectionIntro}>
-                                <span>design your invitation</span>
-                                <h3>try out this interactive blah blah</h3>
+                                <span>Diseño de invitación</span>
+                                <h3>Personaliza el primer detalle que verán tus invitados</h3>
 
                                 <div className={styles.inputContainer}>
                                     <input
@@ -182,8 +200,8 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                     <>
                         <div className={styles.mainContent}>
                             <div className={styles.sectionIntro}>
-                                <span>behind the curtain</span>
-                                <h3>select a fleet that you'll feel good about</h3>
+                                <span>Vestuario nupcial</span>
+                                <h3>Arrastra cada look a la persona correcta</h3>
                             </div>
                             <div className={styles.filters}>
                                 <div className={styles.filtersRow}>
@@ -233,7 +251,7 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                                             e.dataTransfer.setData("item", JSON.stringify(item));
                                         }}
                                         onDragEnd={() => setDraggingRopaId(null)}
-                                        header={<img className={styles.cardEmoji} src={item.imagen} />}
+                                        header={<img className={styles.cardEmoji} src={item.imagen} alt={item.nombre} />}
                                     >
                                         <span className={styles.cardType}>{item.tipo}</span>
                                         <strong>{item.nombre}</strong>
@@ -271,7 +289,7 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                                                 onClick={() => removeRoleItem(role, i)}
                                                 title={item.nombre}
                                             >
-                                                <img src={item.imagen}></img>
+                                                <img src={item.imagen} alt={item.nombre}></img>
                                             </button>
                                         ))}
                                     </div>
@@ -358,7 +376,7 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                 return (<>
                     <div className={styles.mainContent}>
                         <div className={styles.sectionIntro}>
-                            <span>Atelier de ambiente</span>
+                            <span>Taller de ambiente</span>
                             <h3>Diseña tu propio entorno mágico</h3>
                         </div>
 
@@ -388,7 +406,7 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                                         className={decoracion.estilo === estilo ? styles.choiceActive : ""}
                                         onClick={() => setDecoracion({ estilo })}
                                     >
-                                        {estilo}
+                                        {decoracionEstiloLabels[estilo]}
                                     </button>
                                 ))}
                             </div>
@@ -401,7 +419,7 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                                         className={decoracion.color === color ? styles.choiceActive : ""}
                                         onClick={() => setDecoracion({ color })}
                                     >
-                                        {color}
+                                        {decoracionColorLabels[color]}
                                     </button>
                                 ))}
                             </div>
@@ -414,7 +432,7 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                                         className={decoracion.luz === luz ? styles.choiceActive : ""}
                                         onClick={() => setDecoracion({ luz })}
                                     >
-                                        {luz}
+                                        {decoracionLuzLabels[luz]}
                                     </button>
                                 ))}
                             </div>
@@ -501,7 +519,7 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
 
                         <div className={styles.selectedList}>
                             {entretenimiento.length === 0 && (
-                                <div className={styles.emptyState}>Elige música, shows o experiencias.</div>
+                                <div className={styles.emptyState}>Elige música, espectáculos o experiencias.</div>
                             )}
 
                             {entretenimiento.map(item => (
