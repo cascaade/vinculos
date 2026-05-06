@@ -11,8 +11,9 @@ export default function Invitaciones() {
                 <h4 className="header-body">cartas perfectas para cada boda</h4>
             </header>
             <Tiovivo></Tiovivo>
-            <div style={{height: "6rem"}}></div>
+            <div style={{height: "8rem"}}></div>
         </div>
+        <p>text</p>
         <Interaccion lockTab={"invitaciones"}/>
         <Cita name={"Miguel Rodriguez - Novio"}>Me gusta que</Cita>
     </article>);

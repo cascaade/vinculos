@@ -2,6 +2,7 @@ import styles from './Decoraciones.module.scss';
 import GaleriaDeImagenes from "../plano/GaleriaDeImagenes.tsx";
 import Interaccion from "../componentes/Interaccion.tsx";
 import ImageSourceUtil from "../util/ImageSourceLookup.ts";
+import Cita from "../plano/Cita.tsx";
 
 export default function Decoraciones() {
     return (<article className={styles.decoraciones} id="_decoraciones">
@@ -11,5 +12,6 @@ export default function Decoraciones() {
         </header>
         <GaleriaDeImagenes list={ImageSourceUtil.decoraciones} />
         <Interaccion lockTab={"decoraciones"}/>
+        <Cita name={"someone"}>sfglksdjg</Cita>
     </article>);
 }
