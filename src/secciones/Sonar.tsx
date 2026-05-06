@@ -8,7 +8,8 @@ export default function Sonar() {
             <img src={ImageSourceUtil.sonar} alt=""/>
             <h4 className="header-body">planear tu boda soñada</h4>
         </header>
-        <p>Usar el selecion detras para planear tu boda sonada. probar muchas combinaciones y explorar los opciones que ofrecemos</p>
+        <p>Valoramos su tiempo y deseamos que el proceso de planificación sea más fácil para usted.</p>
+        <p>Le recomendamos que use la selección de atrás para planear su boda soñada. probar muchas combinaciones y explorar los opciones que ofrecemos.</p>
         <Interaccion />
     </article>);
 }

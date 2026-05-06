@@ -10,7 +10,11 @@ export default function Logos({header}: LogosProps) {
 
     return (
         <div className={styles.logos}>
-            <span className={styles.header}>{header}</span>
+            {
+                header && (
+                    <span className={styles.header}>{header}</span>
+                )
+            }
             <div className={styles.track}>
                 {looped.map((src, i) => (
                     <div className={styles.logo} key={i}>
