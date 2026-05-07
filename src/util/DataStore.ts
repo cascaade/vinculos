@@ -98,12 +98,12 @@ export const comidaItems: ComidaItem[] = [
 
 export type DecoracionEstilo = "romantico" | "jardin" | "moderno";
 export type DecoracionColor = "rosa" | "verde" | "dorado";
-export type DecoracionLuz = "velas" | "guirnaldas" | "candelabros";
+export type DecoracionDetalle = "banderines" | "globos" | "fondoFotos";
 
 export type DecoracionData = {
     estilo: DecoracionEstilo;
     color: DecoracionColor;
-    luz: DecoracionLuz;
+    detalle: DecoracionDetalle;
     extras: string[];
 };
 
@@ -286,8 +286,8 @@ export const useStore = create<format>((set) => ({
     decoracion: {
         estilo: "romantico",
         color: "rosa",
-        luz: "velas",
-        extras: ["Arco floral"]
+        detalle: "banderines",
+        extras: ["las flores"]
     },
     setDecoracion: (data) =>
         set((state) => ({

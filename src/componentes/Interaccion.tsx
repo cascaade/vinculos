@@ -6,8 +6,8 @@ import {
     useStore,
     ropaItems,
     type DecoracionColor,
+    type DecoracionDetalle,
     type DecoracionEstilo,
-    type DecoracionLuz,
     type RopaItem
 } from "../util/DataStore";
 
@@ -30,11 +30,18 @@ const decoracionColorLabels: Record<DecoracionColor, string> = {
     dorado: "dorado"
 };
 
-const decoracionLuzLabels: Record<DecoracionLuz, string> = {
-    velas: "velas",
-    guirnaldas: "guirnaldas",
-    candelabros: "candelabros"
+const decoracionDetalleLabels: Record<DecoracionDetalle, string> = {
+    banderines: "los banderines",
+    globos: "los globos",
+    fondoFotos: "los fotógrafos"
 };
+
+const decoracionExtraOptions = [
+    "el centro de mesa",
+    "el confeti",
+    "las flores",
+    "el mantel",
+];
 
 type SharedCardProps = {
     header: ReactNode;
@@ -132,7 +139,7 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
         const decoracionNames = [
             `Estilo ${decoracionEstiloLabels[decoracion.estilo]}`,
             `Color ${decoracionColorLabels[decoracion.color]}`,
-            `Luz de ${decoracionLuzLabels[decoracion.luz]}`,
+            `Decoración: ${decoracionDetalleLabels[decoracion.detalle]}`,
             ...decoracion.extras
         ];
         const entretenimientoEnergia = entretenimiento.length === 0
@@ -383,18 +390,46 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                         <div className={
                             styles.decorPreview + " " +
                             styles[`decor-${decoracion.estilo}`] + " " +
-                            styles[`color-${decoracion.color}`] + " " +
-                            styles[`luz-${decoracion.luz}`]
+                            styles[`color-${decoracion.color}`]
                         }>
                             <div className={styles.decorArch}></div>
+                            {decoracion.detalle === "banderines" && (
+                                <div className={styles.decorStreamers}>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            )}
+                            {decoracion.detalle === "globos" && (
+                                <div className={styles.decorBalloons}>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            )}
+                            {decoracion.detalle === "fondoFotos" && (
+                                <div className={styles.decorBackdrop}>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            )}
                             <div className={styles.decorTable}>
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </div>
-                            {decoracion.extras.includes("Arco floral") && <div className={styles.extraFlowers}>✿ ✿ ✿</div>}
-                            {decoracion.extras.includes("Pista espejo") && <div className={styles.extraDanceFloor}></div>}
-                            {decoracion.extras.includes("Rincón de fotos") && <div className={styles.extraPhoto}>Foto</div>}
+                            {decoracion.extras.includes("las flores") && <div className={styles.extraFlowers}>✿ ✿ ✿</div>}
+                            {decoracion.extras.includes("el confeti") && <div className={styles.extraConfetti}></div>}
+                            {decoracion.extras.includes("el cartel") && <div className={styles.extraPoster}>Vínculos</div>}
+                            {decoracion.extras.includes("la pancarta") && <div className={styles.extraBanner}></div>}
+                            {decoracion.extras.includes("el centro de mesa") && <div className={styles.extraCenterpiece}></div>}
+                            {decoracion.extras.includes("las fotografías") && <div className={styles.extraPhoto}>Fotos</div>}
+                            {decoracion.extras.includes("el mantel") && <div className={styles.extraTablecloth}></div>}
+                            {decoracion.extras.includes("las velas") && <div className={styles.extraCandles}></div>}
                         </div>
 
                         <div className={styles.builderGrid}>
@@ -425,14 +460,14 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                             </div>
 
                             <div className={styles.builderGroup}>
-                                <h4>Luz</h4>
-                                {(["velas", "guirnaldas", "candelabros"] as DecoracionLuz[]).map(luz => (
+                                <h4>Decoración</h4>
+                                {(["banderines", "globos", "fondoFotos"] as DecoracionDetalle[]).map(detalle => (
                                     <button
-                                        key={luz}
-                                        className={decoracion.luz === luz ? styles.choiceActive : ""}
-                                        onClick={() => setDecoracion({ luz })}
+                                        key={detalle}
+                                        className={decoracion.detalle === detalle ? styles.choiceActive : ""}
+                                        onClick={() => setDecoracion({ detalle })}
                                     >
-                                        {decoracionLuzLabels[luz]}
+                                        {decoracionDetalleLabels[detalle]}
                                     </button>
                                 ))}
                             </div>
@@ -449,13 +484,13 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                         </div>
 
                         <div className={styles.extraList}>
-                            {["Arco floral", "Pista espejo", "Rincón de fotos"].map(extra => (
+                            {decoracionExtraOptions.map(extra => (
                                 <button
                                     key={extra}
                                     className={decoracion.extras.includes(extra) ? styles.extraActive : ""}
                                     onClick={() => toggleDecoracionExtra(extra)}
                                 >
-                                    {extra}
+                                    Añadir {extra}
                                 </button>
                             ))}
                         </div>
