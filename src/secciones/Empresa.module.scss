@@ -1,7 +1,13 @@
-.negocio {
+.empresa {
     overflow: hidden;
     background: linear-gradient(rgb(255, 240, 255), rgb(255, 245, 255));
     margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border-top: 2rem solid rgb(230, 200, 230);
+    border-bottom: 2rem solid rgb(230, 200, 230);
+    border-radius: 2rem;
+    box-shadow: 0 2px 18px rgba(50, 0, 50, 0.15);
 
     .header {
         display: flex;

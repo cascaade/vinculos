@@ -15,7 +15,7 @@ export default function Pie() {
                     <a href="#decoraciones">decoraciones</a>
                 </div>
                 <div>
-                    <a href="#negocio">negocio</a>
+                    <a href="#empresa">empresa</a>
                     <a href="#contacto">contacto</a>
                 </div>
             </div>

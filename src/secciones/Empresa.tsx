@@ -1,11 +1,11 @@
-import styles from './Negocio.module.scss';
+import styles from './Empresa.module.scss';
 import Cita from "../plano/Cita.tsx";
 import ImageSourceUtil from "../util/ImageSourceLookup.ts";
 
-export default function Negocio() {
-    return (<article className={styles.negocio} id="_negocio">
+export default function Empresa() {
+    return (<article className={styles.empresa} id="_empresa">
         <header className={styles.header}>
-            <img src={ImageSourceUtil.negocio} alt=""/>
+            <img src={ImageSourceUtil.empresa} alt=""/>
             <h3>Sobre Vínculos</h3>
         </header>
         <p>Cada boda debe sentirse fácil, elegante y muy personal.</p>

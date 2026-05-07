@@ -3,7 +3,7 @@ import Numeros from "./secciones/Numeros.tsx";
 import NavegacionDeServicios from "./plano/NavegacionDeServicios.tsx";
 import Invitaciones from "./secciones/Invitaciones.tsx";
 import Ropa from "./secciones/Ropa.tsx";
-import Negocio from "./secciones/Negocio.tsx";
+import Empresa from "./secciones/Empresa.tsx";
 import Comida from "./secciones/Comida.tsx";
 import Decoraciones from "./secciones/Decoraciones.tsx";
 import Entretenimiento from "./secciones/Entretenimiento.tsx";
@@ -64,7 +64,7 @@ function App() {
                     <NavegacionDeServicios ref={serviciosNavRef}/>
                     <Invitaciones/>
                     <Ropa/>
-                    <Negocio/>
+                    <Empresa/>
                     <Comida/>
                     <Decoraciones/>
                     <Entretenimiento/>

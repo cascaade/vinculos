@@ -15,7 +15,7 @@ export default {
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fa6%2F5b%2F8f%2Fa65b8f4e4ac274b56d1904a87059bc7b.jpg&f=1&nofb=1&ipt=76b146a47ebb34aa82fd0844051e3f776d0e7164c7a93ad117f6235f5dfcca1d",
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdna.lystit.com%2Fphotos%2Fnordstrom%2Fef8172f0%2Fdavid-donahue-White-Trim-Fit-Solid-French-Cuff-Tuxedo-Shirt.jpeg&f=1&nofb=1&ipt=29d0f71b5d540342c00ecb900ba6c4a210aca4347fe046d6e472039f0200a0b3"
     ],
-    negocio: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmauiweddingsfromtheheart.com%2Fwp-content%2Fuploads%2F2022%2F11%2Fpackages-06-copy.jpg&f=1&nofb=1&ipt=f5c809a4a639ce2a0118dd27ac692c59f689808bc2e9aecc24997ea10edb02b1",
+    empresa: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmauiweddingsfromtheheart.com%2Fwp-content%2Fuploads%2F2022%2F11%2Fpackages-06-copy.jpg&f=1&nofb=1&ipt=f5c809a4a639ce2a0118dd27ac692c59f689808bc2e9aecc24997ea10edb02b1",
     logos: [
         'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvectorseek.com%2Fwp-content%2Fuploads%2F2023%2F11%2FSubway-NEW-Logo-Vector.svg-.png&f=1&nofb=1&ipt=3d48c5d6d0a55c35fcf6d17587b00a728ba83701a402991fe7bb1c9b27b49f6f',
         'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F1000logos.net%2Fwp-content%2Fuploads%2F2021%2F12%2FPanera-Bread-logo.png&f=1&nofb=1&ipt=e16819c40a816551ce856a734e12953073a24489080b2bbee2d4806cda0364a3',
