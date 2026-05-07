@@ -200,7 +200,7 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                     <>
                         <div className={styles.mainContent}>
                             <div className={styles.sectionIntro}>
-                                <span>Vestuario nupcial</span>
+                                <span>El aspecto de sus invitados</span>
                                 <h3>Arrastra cada look a la persona correcta</h3>
                             </div>
                             <div className={styles.filters}>
@@ -302,7 +302,7 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                 return (<>
                     <div className={styles.mainContent}>
                         <div className={styles.sectionIntro}>
-                            <span>Degustación interactiva</span>
+                            <span>La cena interactiva</span>
                             <h3>Crea un menú que tus invitados van a recordar</h3>
                         </div>
 
@@ -376,7 +376,7 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                 return (<>
                     <div className={styles.mainContent}>
                         <div className={styles.sectionIntro}>
-                            <span>Taller de ambiente</span>
+                            <span>El ambiente perfecto</span>
                             <h3>Diseña tu propio entorno mágico</h3>
                         </div>
 
@@ -465,12 +465,12 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                 return (<>
                     <div className={styles.mainContent}>
                         <div className={styles.sectionIntro}>
-                            <span>Ritmo de la noche</span>
+                            <span>La Vida de su Boda</span>
                             <h3>Construye una fiesta con momentos de energía</h3>
                         </div>
 
                         <div className={styles.timeline}>
-                            {["Ceremonia", "Cóctel", "Cena", "Fiesta"].map(momento => (
+                            {["Ceremonia", "Baile", "Cena", "Fiesta"].map(momento => (
                                 <div key={momento} className={styles.timelineStep}>
                                     <strong>{momento}</strong>
                                 </div>
@@ -508,13 +508,13 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
                     </div>
                     <div className={styles.sideBar}>
                         <div className={styles.sideHeader}>Plan de entretenimiento</div>
-                        <p className={styles.sideNote}>Selecciona actos para ver el pulso de tu celebración.</p>
+                        <p className={styles.sideNote}>Selecciona actos para ver las consecuencias en tu celebración.</p>
 
                         <div className={styles.energyMeter}>
                             <div style={{ height: `${entretenimientoEnergia * 20}%` }}></div>
                         </div>
                         <strong className={styles.energyLabel}>
-                            {entretenimientoEnergia === 0 ? "Sin ritmo aún" : `Energía ${Math.round(entretenimientoEnergia)}/5`}
+                            {entretenimientoEnergia === 0 ? "¡No Energía!" : `Energía ${Math.round(entretenimientoEnergia)}/5`}
                         </strong>
 
                         <div className={styles.selectedList}>
@@ -538,7 +538,7 @@ export default function Interaccion({ lockTab }: InteraccionProps) {
     };
 
     return (
-        <article className={styles.interaccion}>
+        <article className={styles.interaccion} data-text-reveal-ignore>
             <div className={styles.panel}>
                 {!lockTab && (
                     <nav className={styles.tabBar}>

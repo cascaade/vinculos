@@ -9,7 +9,7 @@ export default function Entretenimiento() {
             <h3 className="header-title">Entretenimiento</h3>
             <h4 className="header-body">Divertido para todos</h4>
         </header>
-        <p>¡Mira este video!</p>
+        <p>¡Mira este video de ejemplo!</p>
         <div className={`${styles.videoContainer} standard-content`}>
             <iframe className={styles.video} src={ImageSourceUtil.video} lang={"es"}></iframe>
         </div>

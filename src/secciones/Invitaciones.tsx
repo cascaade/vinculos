@@ -17,6 +17,6 @@ export default function Invitaciones() {
         <p>Es importante que las invitaciones sean fáciles de entender y que reflejen el estilo de cada pareja. También es necesario que cada detalle sea claro. Es mejor que las invitaciones sean únicas, para que no se olviden fácilmente.</p>
         <p>Nos alegra que los clientes puedan crear invitaciones imposibles de olvidar para sus invitados. No hay otra empresa que haga este proceso tan fácil y flexible como nosotros.</p>
         <Interaccion lockTab={"invitaciones"}/>
-        <Cita name={"Miguel Rodríguez - Novio"}>Es increíble que Vínculos haya creado invitaciones que los invitados no puedan olvidar. Me gusta mucho que la empresa sea tan confiable y que permita tanta personalización durante la planificación de nuestra boda. Recomiendo que todos los que busquen un organizador de bodas los elijan.</Cita>
+        <Cita name={"Cliente de Vínculos"}>Es increíble que Vínculos cree invitaciones que los invitados no puedan olvidar. Me gusta mucho que la empresa sea tan confiable y que permita tanta personalización durante la planificación de nuestra boda. Recomiendo que todos los que busquen un organizador de bodas los elijan.</Cita>
     </article>);
 }

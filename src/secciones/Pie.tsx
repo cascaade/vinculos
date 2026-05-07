@@ -1,7 +1,7 @@
 import styles from './Pie.module.scss';
 
 export default function Pie() {
-    return (<footer className={styles.footer}>
+    return (<footer className={styles.footer} data-text-reveal-ignore>
         <section className={styles.main}>
             <span className={`logo ${styles.logo}`}>Vínculos</span>
             <div className={styles.links}>

@@ -10,7 +10,7 @@ export default function Decoraciones() {
             <h3 className="header-title">Decoraciones</h3>
             <h4 className="header-body">Muchos tipos de flores y colores</h4>
         </header>
-        <p>Tenemos una selección grande de decoraciones que se adaptan a tu boda, aunque no haya un tema específico que quieras seguir. Dudamos que encuentres opciones más bonitas a este precio.</p>
+        <p>Tenemos una selección grande de decoraciones que expresan tu boda, aunque no haya un tema específico que quieras seguir. Dudamos que encuentres opciones más bonitas a este precio.</p>
         <GaleriaDeImagenes list={ImageSourceUtil.decoraciones} />
         <p>Es importante que cada detalle tenga buen gusto. Necesitamos centros de mesa que no ocupen mucho espacio y que tengan colores suaves.</p>
         <p>También ofrecemos opciones que no son excesivas. Es importante que todo combine bien y que cree una sensación especial. Dudamos que otras empresas ofrezcan lo mismo.</p>

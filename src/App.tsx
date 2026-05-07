@@ -14,6 +14,7 @@ import Sonar from "./secciones/Sonar.tsx";
 import {useEffect, useRef} from "react";
 import gsap from 'gsap';
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import useScrollTextReveal from "./util/useScrollTextReveal.ts";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -22,6 +23,8 @@ function App() {
     const contactoContainerRef = useRef<HTMLElement>(null);
     const serviciosNavRef = useRef<HTMLElement>(null);
     const contactoNavRef = useRef<HTMLElement>(null);
+
+    useScrollTextReveal();
 
     useEffect(() => {
         const scrollToHash = () => {
